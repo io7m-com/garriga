@@ -32,7 +32,7 @@
 
     <!-- Third-party dependencies. -->
     <jackson.version>2.18.3</jackson.version>
-    <io.helidon.version>4.1.6</io.helidon.version>
+    <io.helidon.version>4.2.0</io.helidon.version>
     <org.junit.version>5.12.1</org.junit.version>
 
     <!-- Container dependencies. -->
