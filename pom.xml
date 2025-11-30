@@ -36,7 +36,7 @@
     <org.junit.version>5.14.1</org.junit.version>
 
     <!-- Container dependencies. -->
-    <com.io7m.oci.versionTemurin>21_35-jre-alpine</com.io7m.oci.versionTemurin>
+    <com.io7m.oci.versionTemurin>25.0.1_8-jre-ubi10-minimal</com.io7m.oci.versionTemurin>
   </properties>
 
   <modules>

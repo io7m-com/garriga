@@ -4,9 +4,10 @@
     <c:release date="2024-06-13T00:00:00+00:00" is-open="false" ticket-system="com.github.io7m.garriga" version="1.0.0">
       <c:changes/>
     </c:release>
-    <c:release date="2025-11-30T20:07:15+00:00" is-open="true" ticket-system="com.github.io7m.garriga" version="1.1.0">
+    <c:release date="2025-11-30T20:09:25+00:00" is-open="true" ticket-system="com.github.io7m.garriga" version="1.1.0">
       <c:changes>
-        <c:change date="2025-11-30T20:07:15+00:00" summary="Upgrade to Jackson 3.0.3."/>
+        <c:change date="2025-11-30T00:00:00+00:00" summary="Upgrade to Jackson 3.0.3."/>
+        <c:change date="2025-11-30T20:09:25+00:00" summary="Upgrade OCI image JDK 21_35-jre-alpine -&gt; 25.0.1_8-jre-ubi10-minimal."/>
       </c:changes>
     </c:release>
   </c:releases>
