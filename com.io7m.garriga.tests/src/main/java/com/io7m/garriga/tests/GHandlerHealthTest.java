@@ -17,7 +17,7 @@
 
 package com.io7m.garriga.tests;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.io7m.garriga.main.http.GHandlerHealth;
 import com.io7m.garriga.main.http.GMessageV4ObjectMappers;
 import com.io7m.garriga.main.matrix.GMatrixServiceStatusType.HealthyType.Connected;

@@ -16,12 +16,12 @@
 
 package com.io7m.garriga.main.http;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.module.SimpleModule;
 import com.io7m.dixmont.core.DmJsonRestrictedDeserializers;
 
-import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
+import static tools.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
 
 /**
  * Functions to create JSON mappers for v1 messages.
@@ -40,24 +40,22 @@ public final class GMessageV4ObjectMappers
 
   public static ObjectMapper createMapper()
   {
-    final JsonMapper mapper =
-      JsonMapper.builder()
-        .disable(FAIL_ON_UNKNOWN_PROPERTIES)
-        .build();
-
     final var deserializers =
       DmJsonRestrictedDeserializers.builder()
         .allowClass(GAlertManagerRequestV4.class)
         .allowClass(GAlertV4.class)
         .allowClass(String.class)
         .allowClass(int.class)
-        .allowClassName("java.util.Map<java.lang.String,java.lang.String>")
-        .allowClassName("java.util.List<com.io7m.garriga.main.http.GAlertV4>")
+        .allowListsOfClass(GAlertV4.class)
+        .allowMapsOfClass(String.class, String.class)
         .build();
 
     final var simpleModule = new SimpleModule();
     simpleModule.setDeserializers(deserializers);
-    mapper.registerModule(simpleModule);
-    return mapper;
+
+    return JsonMapper.builder()
+      .disable(FAIL_ON_UNKNOWN_PROPERTIES)
+      .addModule(simpleModule)
+      .build();
   }
 }

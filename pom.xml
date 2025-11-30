@@ -26,12 +26,12 @@
     <io7m.java.targetJavaVersion>21</io7m.java.targetJavaVersion>
 
     <!-- io7m dependencies. -->
-    <com.io7m.dixmont.version>2.1.0</com.io7m.dixmont.version>
+    <com.io7m.dixmont.version>3.0.0</com.io7m.dixmont.version>
     <com.io7m.quarrel.version>1.8.0</com.io7m.quarrel.version>
     <com.io7m.repetoir.version>1.0.1</com.io7m.repetoir.version>
 
     <!-- Third-party dependencies. -->
-    <jackson.version>2.20.1</jackson.version>
+    <jackson.version>3.0.3</jackson.version>
     <io.helidon.version>4.3.1</io.helidon.version>
     <org.junit.version>5.14.1</org.junit.version>
 
@@ -120,7 +120,7 @@
       </dependency>
 
       <dependency>
-        <groupId>com.fasterxml.jackson</groupId>
+        <groupId>tools.jackson</groupId>
         <artifactId>jackson-bom</artifactId>
         <version>${jackson.version}</version>
         <scope>import</scope>

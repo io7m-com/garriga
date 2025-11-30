@@ -17,7 +17,7 @@
 
 package com.io7m.garriga.tests;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.io7m.garriga.main.http.GAlertManagerRequestV4;
 import com.io7m.garriga.main.http.GHTTPServerConfiguration;
 import com.io7m.garriga.main.http.GHandlerV4;

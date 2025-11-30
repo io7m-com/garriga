@@ -27,7 +27,7 @@ open module com.io7m.garriga.tests
   requires org.junit.platform.launcher;
 
   requires io.helidon.webserver;
-  requires com.fasterxml.jackson.databind;
+  requires tools.jackson.databind;
   requires com.io7m.garriga.main;
   requires com.io7m.repetoir.core;
   requires org.mockito;

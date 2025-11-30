@@ -23,7 +23,6 @@ module com.io7m.garriga.main
   requires static org.osgi.annotation.versioning;
   requires static org.osgi.annotation.bundle;
 
-  requires com.fasterxml.jackson.databind;
   requires com.io7m.dixmont.core;
   requires com.io7m.quarrel.core;
   requires com.io7m.quarrel.ext.logback;
@@ -33,15 +32,16 @@ module com.io7m.garriga.main
   requires jul.to.slf4j;
   requires org.apache.commons.text;
   requires org.slf4j;
+  requires tools.jackson.databind;
 
   exports com.io7m.garriga.main;
 
   opens com.io7m.garriga.main.matrix
-    to com.fasterxml.jackson.databind;
+    to tools.jackson.databind;
   opens com.io7m.garriga.main.server
-    to com.fasterxml.jackson.databind;
+    to tools.jackson.databind;
   opens com.io7m.garriga.main.http
-    to com.fasterxml.jackson.databind;
+    to tools.jackson.databind;
 
   exports com.io7m.garriga.main.matrix
     to com.io7m.garriga.tests;
