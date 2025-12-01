@@ -16,7 +16,7 @@
 
 package com.io7m.garriga.main.matrix;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.io7m.garriga.main.matrix.GMatrixJSON.MError;
 import com.io7m.garriga.main.matrix.GMatrixJSON.MLoginRequest;
 import com.io7m.garriga.main.matrix.GMatrixJSON.MLoginResponse;

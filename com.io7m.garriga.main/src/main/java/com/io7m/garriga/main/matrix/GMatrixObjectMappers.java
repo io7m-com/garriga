@@ -16,14 +16,14 @@
 
 package com.io7m.garriga.main.matrix;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.module.SimpleModule;
 import com.io7m.dixmont.core.DmJsonRestrictedDeserializers;
 
 import java.util.Set;
 
-import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
+import static tools.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
 import static com.io7m.garriga.main.matrix.GMatrixJSON.MError;
 import static com.io7m.garriga.main.matrix.GMatrixJSON.MLoginRequest;
 import static com.io7m.garriga.main.matrix.GMatrixJSON.MLoginResponse;
@@ -58,11 +58,6 @@ public final class GMatrixObjectMappers
       "java.util.List<java.lang.String>"
     );
 
-    final JsonMapper mapper =
-      JsonMapper.builder()
-        .disable(FAIL_ON_UNKNOWN_PROPERTIES)
-        .build();
-
     final var deserializers =
       DmJsonRestrictedDeserializers.builder()
         .allowClassNames(classes)
@@ -70,7 +65,10 @@ public final class GMatrixObjectMappers
 
     final var simpleModule = new SimpleModule();
     simpleModule.setDeserializers(deserializers);
-    mapper.registerModule(simpleModule);
-    return mapper;
+
+    return JsonMapper.builder()
+      .disable(FAIL_ON_UNKNOWN_PROPERTIES)
+      .addModule(simpleModule)
+      .build();
   }
 }

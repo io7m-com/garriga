@@ -17,7 +17,7 @@
 
 package com.io7m.garriga.tests;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.io7m.garriga.main.http.GAlertManagerRequestV4;
 import com.io7m.garriga.main.http.GHTTPServerConfiguration;
 import com.io7m.garriga.main.http.GHandlerV4;
@@ -34,9 +34,7 @@ import io.helidon.webserver.http.ServerRequest;
 import io.helidon.webserver.http.ServerResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.internal.verification.Times;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,6 +46,7 @@ import java.util.OptionalLong;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
 
 public final class GHandlerV4Test
 {
@@ -142,7 +141,7 @@ public final class GHandlerV4Test
     this.handler.handle(this.request, this.response);
 
     Mockito.verifyNoMoreInteractions(this.matrix);
-    Mockito.verify(this.response, new Times(1))
+    Mockito.verify(this.response, times(1))
       .status(401);
   }
 
@@ -155,7 +154,7 @@ public final class GHandlerV4Test
     this.handler.handle(this.request, this.response);
 
     Mockito.verifyNoMoreInteractions(this.matrix);
-    Mockito.verify(this.response, new Times(1))
+    Mockito.verify(this.response, times(1))
       .status(401);
   }
 
@@ -168,7 +167,7 @@ public final class GHandlerV4Test
     this.handler.handle(this.request, this.response);
 
     Mockito.verifyNoMoreInteractions(this.matrix);
-    Mockito.verify(this.response, new Times(1))
+    Mockito.verify(this.response, times(1))
       .status(401);
   }
 
@@ -183,7 +182,7 @@ public final class GHandlerV4Test
     this.handler.handle(this.request, this.response);
 
     Mockito.verifyNoMoreInteractions(this.matrix);
-    Mockito.verify(this.response, new Times(1))
+    Mockito.verify(this.response, times(1))
       .status(413);
   }
 
@@ -208,9 +207,9 @@ public final class GHandlerV4Test
 
     this.handler.handle(this.request, this.response);
 
-    Mockito.verify(this.matrix, new Times(2))
+    Mockito.verify(this.matrix, times(2))
       .send(any());
-    Mockito.verify(this.response, new Times(1))
+    Mockito.verify(this.response, times(1))
       .status(200);
   }
 }

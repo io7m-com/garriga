@@ -17,7 +17,7 @@
 
 package com.io7m.garriga.main.http;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.io7m.garriga.main.matrix.GMatrixMessage;
 import com.io7m.garriga.main.matrix.GMatrixServiceType;
 import com.io7m.repetoir.core.RPServiceDirectoryType;
