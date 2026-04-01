@@ -31,7 +31,7 @@
     <com.io7m.repetoir.version>1.0.1</com.io7m.repetoir.version>
 
     <!-- Third-party dependencies. -->
-    <jackson.version>3.0.4</jackson.version>
+    <jackson.version>3.1.0</jackson.version>
     <io.helidon.version>4.4.0</io.helidon.version>
     <org.junit.version>5.14.2</org.junit.version>
 
