@@ -33,7 +33,7 @@
     <!-- Third-party dependencies. -->
     <jackson.version>3.0.4</jackson.version>
     <io.helidon.version>4.4.0</io.helidon.version>
-    <org.junit.version>5.14.2</org.junit.version>
+    <org.junit.version>5.14.3</org.junit.version>
 
     <!-- Container dependencies. -->
     <com.io7m.oci.versionTemurin>25.0.1_8-jre-ubi10-minimal</com.io7m.oci.versionTemurin>
